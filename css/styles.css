@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* ### Primary */
+
+--Soft-red: hsl(10, 79%, 65%);
+--Cyan: hsl(186, 34%, 60%);
+
+    /* ### Neutral */
+
+--Dark-brown: hsl(25, 47%, 15%);
+--Medium-brown: hsl(28, 10%, 53%);
+--Cream: hsl(27, 66%, 92%);
+--Very-pale-orange: hsl(33, 100%, 98%);
+}
+
+body{
+    background-color: var(--Cream);
+    height: 90vh;
+    color: var(--Dark-brown);
+}
+
+
+.balance{
+    background-color: var(--Soft-red);
+    border-radius: 30px;
+}
+
+.spending{
+    background-color: var(--Very-pale-orange);
+    border-radius: 30px;
+    position: relative;
+}
+
+.chart{
+    position: relative;
+}
+
+.chart1::before{
+    height: 58px;
+}
+.chart2::before{
+    height: 116px;
+}
+.chart3::before{
+    height: 174.5px;
+}
+.chart4::before{
+    height: 103.5px;
+}
+.chart5::before{
+    height: 78px;
+}
+.chart6::before{
+    height: 144px;
+}
+.chart7::before{
+    height: 85px;
+}
+
+[data]:hover::after {
+    content: attr(data)"$" ;
+    position: absolute;
+    width: 100%;
+    top: -40px;
+    left: 0;
+    padding: 4px 6px;
+    border-radius: 6px;
+    color: var(--Cream);
+    background-color:var(--Dark-brown);
+}
+
+.chart:hover{
+    cursor: pointer;
+    opacity: 70%;
+}
+
+
+.chart::before{
+    width: 60px;
+    border-radius: 7px;
+    background-color: var(--Soft-red);
+    display: block;
+    content:"";
+}
+
+@media screen and (max-width:768px) {
+    .chart::before{
+        width:40px;
+    }
+
+    [data]:hover::after {
+        font-size: x-small;
+    }
+}
+
+.active::before{
+  
+    border-radius: 7px;
+    background-color: var(--Cyan);
+    display: block;
+    content:"";
+}
